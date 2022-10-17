@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+/* ======================================= */
+html {
+  position: relative;
+  z-index: 1;
+}
+
+.cat-body {
+  position: relative;
+  z-index: 1;
+
+  height: 100vh;
+  width: 100vw;
+  padding: 20px 0 0 20px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.cat-load-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 99.75%;
+  width: 99.75%;
+
+  transition: all 1s linear;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: transparent;
+
+  z-index: -1;
+}
+
+.cat-btn {
+  font-size: 20px;
+  padding: 10px 15px 10px 15px;
+
+  transition: background-color 300ms linear, color 300ms linear;
+
+  background-color: rgba(240, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.cat-btn:hover,
+.cat-btn:focus {
+  color: rgba(240, 255, 255, 1);
+  background-color: rgb(98, 48, 190);
+}
+
+.cat-btn.fact {
+  margin-bottom: 5px;
+}
+
+.cat {
+  margin-top: 20px;
+  max-width: 80vw;
+  max-height: 700px;
+  border-radius: 10px;
+}
+
+.cat-list {
+  margin-top: 20px;
+}
+
+.cat-list li {
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  color: wheat;
+  background-color: rgba(0, 0, 0, 0.6);
+}
