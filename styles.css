@@ -48,8 +48,8 @@ html {
   top: 0;
   left: 0;
 
-  height: 99.75%;
-  width: 99.75%;
+  height: 100%;
+  width: 100%;
 
   transition: all 1s linear;
   background-color: transparent;
