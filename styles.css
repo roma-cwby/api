@@ -52,6 +52,10 @@ button {
   background-color: rgb(98, 48, 190);
 }
 
+.cat-btn.fact {
+  margin-bottom: 5px;
+}
+
 .cat {
   margin-top: 20px;
   max-width: 80vw;
