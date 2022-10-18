@@ -7,7 +7,19 @@ const sidesList = document.querySelectorAll(".slider-item");
 let backImg = 0;
 let rotateDeg = 0;
 
-const width = window.screen.width / 4;
+let width = null;
+
+if (window.screen.width < 1000) {
+  width = window.screen.width - 50;
+  list.style.top = "70px";
+  rigthBtn.style.display = "none";
+  leftBtn.style.display = "none";
+} else if (window.screen.width < 1500) {
+  width = window.screen.width / 1.5;
+} else {
+  width = window.screen.width / 3;
+}
+
 root.style.setProperty("--width", width + "px");
 
 rigthBtn.addEventListener("click", { handleEvent: rotate, side: "r" });
@@ -15,8 +27,25 @@ leftBtn.addEventListener("click", rotate);
 
 startImg(sidesList);
 
-function rotate() {
-  if (this.side === "r") {
+let touchstartX = 0;
+let touchendX = 0;
+
+function checkDirection() {
+  if (touchendX < touchstartX) rotate("r");
+  if (touchendX > touchstartX) rotate();
+}
+
+document.addEventListener("touchstart", (e) => {
+  touchstartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener("touchend", (e) => {
+  touchendX = e.changedTouches[0].screenX;
+  checkDirection();
+});
+
+function rotate(touchSide = "l") {
+  if (this.side === "r" || touchSide === "r") {
     rotateDeg -= 90;
     backImg += 1;
   } else {
