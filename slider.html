@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="slider-body">
+    <a href="./">Back</a>
+
+    <div class="slider-wrap">
+      <button class="slider-left-btn" type="button">
+        <svg class="slider-icon" width="60" height="60">
+          <use href="./icons.svg#icon-arrow"></use>
+        </svg>
+      </button>
+
+      <ul class="slider-list">
+        <li class="slider-item back"></li>
+        <li class="slider-item left"></li>
+        <li class="slider-item front"></li>
+        <li class="slider-item right"></li>
+      </ul>
+
+      <button class="slider-right-btn" type="button">
+        <svg class="slider-icon" width="60" height="60">
+          <use href="./icons.svg#icon-arrow"></use>
+        </svg>
+      </button>
+    </div>
+
+    <script src="./js/slider.js"></script>
+  </body>
+</html>
