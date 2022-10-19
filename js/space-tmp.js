@@ -71,8 +71,8 @@ function card(arr, type) {
         <p>Species: ${arr.species}</p>
         <p>Gender: ${arr.gender}</p>
         <p>Hair: ${arr.hair}</p>
-        <p>Origin:${arr.origin}</p>
-        <p>Atributes:${arr.abilities.join(", ")}</p>
+        <p>Origin: ${arr.origin}</p>
+        <p>Atributes: ${arr.abilities.join(", ")}</p>
       </div>
     </div>`;
   } else if (type === "l") {
@@ -100,8 +100,8 @@ function card(arr, type) {
         <p>Species: ${arr.species}</p>
         <p>Gender: ${arr.gender}</p>
         <p>Hair: ${arr.hair}</p>
-        <p>Origin:${arr.origin}</p>
-        <p>Atributes:${arr.abilities.join(", ")}</p>
+        <p>Origin: ${arr.origin}</p>
+        <p>Atributes: ${arr.abilities.join(", ")}</p>
       </div>
     </div>`;
   }
