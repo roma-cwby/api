@@ -8,16 +8,28 @@ body.addEventListener("click", onClick);
 list.addEventListener("click", onCard);
 
 function onClick(e) {
-  if (e.target.classList.contains("episodes")) getContent("episode");
-  else if (e.target.classList.contains("characters")) getContent("character");
-  else if (e.target.classList.contains("locations")) getContent("location");
-  else if (e.target.classList.contains("quotes")) getContent();
-  else if (e.target.classList.contains("trailer")) {
+  if (e.target.classList.contains("episodes")) {
+    showSpinner();
+    getContent("episode");
+  } else if (e.target.classList.contains("characters")) {
+    showSpinner();
+    getContent("character");
+  } else if (e.target.classList.contains("locations")) {
+    showSpinner();
+    getContent("location");
+  } else if (e.target.classList.contains("quotes")) {
+    showSpinner();
+    getContent();
+  } else if (e.target.classList.contains("trailer")) {
     list.innerHTML = tmp.trailer();
     document
       .querySelector(".space-modal-window")
       .addEventListener("click", closeModal);
   } else return;
+  setTimeout(() => {
+    document.querySelector(".spinner").remove();
+    list.classList.remove("hidden");
+  }, 2000);
 }
 
 function onCard(e) {
@@ -60,4 +72,15 @@ function getContent(type = "quote") {
       list.innerHTML = tmp.content(data, type);
       type === "quote" ? (show = null) : (show = type);
     });
+}
+
+function showSpinner() {
+  list.classList.add("hidden");
+  body.insertAdjacentHTML(
+    "beforeend",
+    `<div class="spinner">
+      <img class="space-spinner" src="./img/mooncake.gif" alt="spinner" />
+      <p>Loading...</p>
+    </div>`
+  );
 }

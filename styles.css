@@ -124,6 +124,10 @@ html {
   color: white;
 }
 
+.slider-body .space-spinner {
+  margin: 0 auto;
+}
+
 .back-link {
   position: absolute;
   top: 20px;
@@ -515,4 +519,31 @@ html {
   max-height: 720px;
 
   border-radius: 20px;
+}
+
+.spinner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner p {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+}
+
+.space-spinner {
+  width: calc(100vw - 40px);
+  max-width: 600px;
+
+  border-radius: 40px;
+  opacity: 0.9;
+}
+
+.hidden {
+  display: none;
 }

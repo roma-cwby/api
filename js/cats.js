@@ -67,8 +67,6 @@ function getImg() {
       setTimeout(() => {
         backImg.style = `background-image: url("${data.file}")`;
       }, 1200);
-      //   img.src = data.file;
-      //   img.style = "";
     });
 }
 
