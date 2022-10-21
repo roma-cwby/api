@@ -1,18 +1,17 @@
-export default { content, card };
+export default { content, card, trailer };
 
 function content(arr, type) {
-  if (type === "e")
+  if (type === "episode")
     return arr.reduce(
       (acc, item) =>
         acc +
         `<li class="space-content-item" id="${item.id}">
       <img src="${item.img_url}" alt="Episode ${item.id}" width="400" />
       <h2>${item.name}</h2>
-      <p>Director: ${item.director}</p>
     </li>`,
       ""
     );
-  else if (type === "c")
+  else if (type === "character")
     return arr.reduce(
       (acc, item) =>
         acc +
@@ -24,7 +23,7 @@ function content(arr, type) {
 </li>`,
       ""
     );
-  else if (type === "l")
+  else if (type === "location")
     return arr.reduce(
       (acc, item) =>
         acc +
@@ -49,23 +48,22 @@ function content(arr, type) {
 }
 
 function card(arr, type) {
-  if (type === "e")
+  if (type === "episode")
     return `<div class="space-modal-window">
       <div class="space-modal">
-        <img src="${arr.img_url}" alt="Episode ${arr.name}" style="border-radius: 20px"/>
+        <img src="${arr.img_url}" alt="Episode ${arr.name}" />
         <h1>${arr.name}</h1>
         <p>Director: ${arr.director}</p>
         <p>Writer: ${arr.writer}</p>
         <p>Date: ${arr.air_date}</p>
       </div>
     </div>`;
-  else if (type === "c") {
+  else if (type === "character") {
     return `<div class="space-modal-window">
       <div class="space-modal">
         <img
           src="${arr.img_url}"
           alt="Episode ${arr.name}"
-          style="border-radius: 20px"
         />
         <h1>${arr.name}</h1>
         <p>Species: ${arr.species}</p>
@@ -75,13 +73,12 @@ function card(arr, type) {
         <p>Atributes: ${arr.abilities.join(", ")}</p>
       </div>
     </div>`;
-  } else if (type === "l") {
+  } else if (type === "location") {
     return `<div class="space-modal-window">
       <div class="space-modal">
         <img
           src="${arr.img_url}"
           alt="Episode ${arr.name}"
-          style="border-radius: 20px"
         />
         <h1>${arr.name}</h1>
         <p>Type: ${arr.type}</p>
@@ -94,7 +91,6 @@ function card(arr, type) {
         <img
           src="${arr.img_url}"
           alt="Episode ${arr.name}"
-          style="border-radius: 20px"
         />
         <h1>${arr.name}</h1>
         <p>Species: ${arr.species}</p>
@@ -105,4 +101,12 @@ function card(arr, type) {
       </div>
     </div>`;
   }
+}
+
+function trailer() {
+  return `<div class="space-modal-window"><iframe
+          class="space-trailer"
+          src="./video/Trailer.mp4"
+          frameborder="0"
+        ></iframe></div>`;
 }

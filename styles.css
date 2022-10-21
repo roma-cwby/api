@@ -486,6 +486,7 @@ html {
 
   background-color: bisque;
   border-radius: 20px;
+  overflow: hidden;
 }
 
 .space-modal img {
@@ -502,4 +503,16 @@ html {
   margin-right: 5px;
   margin-top: 10px;
   color: rgb(139, 135, 128);
+}
+
+.space-trailer {
+  --wid: 100vw;
+  --hei: calc(var(--wid) / 1.77);
+  width: var(--wid);
+  height: var(--hei);
+
+  max-width: 1280px;
+  max-height: 720px;
+
+  border-radius: 20px;
 }
