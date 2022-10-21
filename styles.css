@@ -272,7 +272,7 @@ html {
 .left::after {
   content: "";
   position: absolute;
-  bottom: -9.86%;
+  bottom: -10%;
   background-image: inherit;
   width: inherit;
   height: 19%;
